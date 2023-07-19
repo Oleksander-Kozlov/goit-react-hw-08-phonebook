@@ -6,6 +6,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { contactsReducer } from './contactsSlise';
 import { filtersReducer } from './filtersSlise';
+import { authSliseReducer } from './auth/auth-slise';
+
 export const store = configureStore({
-  reducer: { contacts: contactsReducer, filters: filtersReducer },
+  reducer: {
+    contacts: contactsReducer,
+    filters: filtersReducer,
+    auth: authSliseReducer,
+  },
 });
