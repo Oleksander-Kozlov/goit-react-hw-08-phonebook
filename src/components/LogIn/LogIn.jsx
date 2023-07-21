@@ -10,8 +10,12 @@ import {
 } from './LogIn.styled.js';
 import * as authOperation from 'redux/auth/auth-operation';
 //початкові значення форміка
-const initialValues = { name: '', email: '', password: '' };
-
+const initialValues = { email: '', password: '' };
+//схема валідації
+const schema = yup.object().shape({
+  email: yup.string().required().min(4),
+  password: yup.string().required().min(4),
+});
 export const LogIn = () => {
   //виклик диспечера
   const dispatch = useDispatch();
@@ -19,31 +23,25 @@ export const LogIn = () => {
 
   //додавання контакту при сабміті
   const handleSabmit = (values, { resetForm }) => {
-    console.log('values', values);
+ 
     // виклик диспечера для відправки даних в редакс
-    const reg = JSON.stringify({
-      name: values.name.trim(),
-      email: values.email.trim(),
-      
-    });
-    console.log('reg', reg);
-
+ console.log('valuesLOG', values);
+// const log = JSON.stringify({
+//   name: values.name.trim(),
+//   email: values.email.trim(),
+// });
+// console.log('loglog', log);
     dispatch(
-      authOperation.register({
-        name: values.name.trim(),
+      authOperation.logIn({
         email: values.email.trim(),
-        
+        password: values.password.trim(),
       })
     );
 
     resetForm();
   };
-  //схема валідації
-  const schema = yup.object().shape({
-    name: yup.string().required().min(4),
-    email: yup.string().required().min(4),
-    
-  });
+
+  
   return (
     <Formik
       initialValues={initialValues}
@@ -54,15 +52,14 @@ export const LogIn = () => {
         <Title>LogIn</Title>
 
         <Label htmlFor="email">E-mail</Label>
-        <Field name="email" type="email" />
+        <Field name="email"  />
         <ErrorMessage name="email" component="div" />
 
-        <Label htmlFor="name">Name</Label>
-        <Field name="name" type="name" />
-        <ErrorMessage name="name" component="div" />
+        <Label htmlFor="password">password</Label>
+        <Field name="password"  />
+        <ErrorMessage name="password" component="div" />
 
-        
-        <ButtonAddContacts type="submit">sign in</ButtonAddContacts>
+        <ButtonAddContacts type="submit">Enter</ButtonAddContacts>
       </Form>
     </Formik>
   );

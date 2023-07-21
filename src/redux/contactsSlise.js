@@ -13,6 +13,7 @@ const handlePending = state => {
 };
 
 const handleFulfilled = (state, action) => {
+  console.log('ADD', action.payload);
   state.items = action.payload;
   state.isLoading = false;
 };

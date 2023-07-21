@@ -42,7 +42,7 @@ export const fetchContacts = createAsyncThunk(
   async (_, {rejectWithValue}) => {
     try {
       const contacts = await axios.get(
-        'https://64abd7fe9edb4181202ea786.mockapi.io/phonenbook/v1/contacts'
+        'https://connections-api.herokuapp.com/contacts'
       );
     
       return contacts.data;
@@ -57,10 +57,10 @@ export const fetchContacts = createAsyncThunk(
 
 export const removeContact = createAsyncThunk(
   'contacts/removeContact',
-  async ({id, name}, { rejectWithValue }) => {
+  async ({id,name}, { rejectWithValue }) => {
     try {
       const contact = await axios.delete(
-        `https://64abd7fe9edb4181202ea786.mockapi.io/phonenbook/v1/contacts/${id}`
+        `https://connections-api.herokuapp.com/contacts/${id}`
       );
       toast(`${name} has deleted`, optToast); 
       return contact.data;
@@ -77,7 +77,7 @@ export const addContact = createAsyncThunk(
   async (newContact, { rejectWithValue }) => {
     try {
       const contact = await axios.post(
-        'https://64abd7fe9edb4181202ea786.mockapi.io/phonenbook/v1/contacts',
+        'https://connections-api.herokuapp.com/contacts',
         newContact
       );
             toast.success(`${newContact.name} add to phonebook`,{

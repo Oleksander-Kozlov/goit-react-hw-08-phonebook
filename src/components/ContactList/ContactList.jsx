@@ -8,14 +8,20 @@ import {
   ButtonDelete,
   CotactItem,
 } from '../ContactList/ContactList.styled.js';
+import { useEffect } from 'react';
 // import toast from 'react-hot-toast';
 
+
 export const ContactList = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(operation.fetchContacts());
+  }, [dispatch]);
   //значення стору редакс
   const filters = useSelector(state => state.filters) || '';  
   const { items } = useSelector(getContacts);
   //диспечер)
-  const dispatch = useDispatch();
+ 
 //функція фільтрації контактів
 const getVisibleContacts = (contacts, filters) => {
   switch (filters) {

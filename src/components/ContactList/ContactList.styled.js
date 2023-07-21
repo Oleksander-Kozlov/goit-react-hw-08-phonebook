@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
+width: 97%;
   list-style: none;
   margin-right:0;
   padding:0  

@@ -46,7 +46,7 @@ export const ContactForm = () => {
     dispatch(
       operation.addContact({
         name: values.name.trim(),
-        phone: values.number.trim(),
+        number: values.number.trim(),
       })
     );
 
