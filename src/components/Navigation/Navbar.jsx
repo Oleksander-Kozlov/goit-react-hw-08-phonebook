@@ -5,16 +5,15 @@ export const Navbar = () => {
   return (
     <NavbarContainer>
       <div>
-        <h1>Phonebook</h1>
+        <NavLink href="/">
+          Phonebook
+        </NavLink>
       </div>
       <NavList>
         <NavItem>
           <NavLink href="/contacts">Contacts</NavLink>
         </NavItem>
-        
       </NavList>
-
-     
     </NavbarContainer>
   );
 };
