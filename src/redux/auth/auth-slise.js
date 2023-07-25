@@ -1,4 +1,7 @@
 import { register, logIn, logOut, refreshUser } from './auth-operation.js';
+// import { authSliseReducer } from './auth/auth-slise';
+import {  persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; 
 const { createSlice } = require('@reduxjs/toolkit');
 const initialState = {
   user: { name: null, email: null },
@@ -69,4 +72,12 @@ const authSlise = createSlice({
       .addCase(refreshUser.rejected, handleRejectedRefreshUser),
 });
 
-export  const authSliseReducer = authSlise.reducer;
+const AuthPersistConfig = {
+  key: 'authSlise',
+  storage,
+  whitelist: ['token'],
+};
+
+export const authSliseReducer = persistReducer(AuthPersistConfig, authSlise.reducer);
+
+// export  const authSliseReducer = authSlise.reducer;
