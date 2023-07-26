@@ -3,7 +3,8 @@ import { Toaster } from 'react-hot-toast';
 import { AppBar } from './Navigation/AppBar';
 import { Suspense } from 'react';
 
-export const Layout = () => {
+export  const Layout = () => {
+ 
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
       <AppBar />
