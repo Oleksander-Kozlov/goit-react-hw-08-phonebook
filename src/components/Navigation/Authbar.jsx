@@ -1,13 +1,13 @@
-import { NavItem, NavLink, NavList } from './Navbar.styled.js';
+import { NavItem, NavLinkStyled, NavList } from './Navbar.styled.js';
 
 export const Authbar = () => {
   return (
     <NavList>
       <NavItem>
-        <NavLink href="/register">Register</NavLink>
+        <NavLinkStyled to="/register">Register</NavLinkStyled>
       </NavItem>
       <NavItem>
-        <NavLink href="/login">Log In</NavLink>
+        <NavLinkStyled to="/login">Log In</NavLinkStyled>
       </NavItem>
     </NavList>
   );

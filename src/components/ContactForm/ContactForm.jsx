@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Notify } from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
-import * as operation from 'redux/operation';
+import * as operation from 'redux/contacts/operation';
 //формік і валідація
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
@@ -12,7 +12,7 @@ import {
   ButtonAddContacts,
   Form,
 } from '../ContactForm/ContactForm.styled.js';
-import { getContacts } from 'redux/selectors.js';
+import { getContacts } from 'redux/contacts/selectors.js';
 import toast from 'react-hot-toast';
 //початкові значення форміка
 const initialValues = { name: '', number: '' };

@@ -1,7 +1,7 @@
 //redux
 import { useDispatch, useSelector } from 'react-redux';
-import * as operation from 'redux/operation';
-import { getContacts } from 'redux/selectors.js';
+import * as operation from 'redux/contacts/operation';
+import { getContacts } from 'redux/contacts/selectors.js';
 //styled
 import {
   List,

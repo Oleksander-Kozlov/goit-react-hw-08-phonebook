@@ -1,5 +1,6 @@
 
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const NavbarContainer = styled.header`
   background-color: #333;
@@ -33,7 +34,7 @@ export const NavItem = styled.li`
   }
 `;
 
-export const NavLink = styled.a`
+export const NavLinkStyled = styled(NavLink)`
   color: #fff;
   text-decoration: none;
   padding: 5px;

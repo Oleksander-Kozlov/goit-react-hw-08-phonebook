@@ -1,17 +1,22 @@
 
-import { NavItem, NavLink, NavList, NavbarContainer } from './Navbar.styled.js';
+import {
+  NavItem,
+  NavLinkStyled,
+  NavList,
+  NavbarContainer,
+} from './Navbar.styled.js';
 
 export const Navbar = () => {
   return (
     <NavbarContainer>
       <div>
-        <NavLink href="/">
+        <NavLinkStyled to="/">
           Phonebook
-        </NavLink>
+        </NavLinkStyled>
       </div>
       <NavList>
         <NavItem>
-          <NavLink href="/contacts">Contacts</NavLink>
+          <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>
         </NavItem>
       </NavList>
     </NavbarContainer>

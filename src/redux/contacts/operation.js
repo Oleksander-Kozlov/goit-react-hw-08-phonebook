@@ -1,29 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
-// import toast from 'react-hot-toast';
-// import * as ContactAPI from './ContactAPI';
-// import {
-//   fetchContactsRequest,
-//   fetchContactsSuccess,
-//   fetchContactsError,
-// } from './contactsSlise.js';
 
-// export const fetchContacts = () => async dispatch => {
-//   dispatch(fetchContactsRequest());
-
-//   try {
-//     const contacts = await axios.get(
-//       'https://64abd7fe9edb4181202ea786.mockapi.io/phonenbook/v1/contacts'
-//     );
-//     dispatch(fetchContactsSuccess(contacts.data));
-//   }
-//   catch (error) {
-//     dispatch(fetchContactsError(error));
-//   }
-// };
-
-// import axios from 'axios';
   const optToast = {
     duration: 2000,
     position: 'top-center',

@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { Helmet } from 'react-helmet';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
-import { fetchContacts } from '../redux/operation.js';
-import { selectIsLoading } from 'redux/selectors';
+import { fetchContacts } from '../redux/contacts/operation.js';
+import { selectIsLoading } from 'redux/contacts/selectors';
 import { Helmet } from 'react-helmet';
 
 export default function Contacts() {

@@ -4,8 +4,8 @@
 // const enhancer = devToolsEnhancer();
 // export const store = createStore(rootReducer, enhancer);
 import { configureStore } from '@reduxjs/toolkit';
-import { contactsReducer } from './contactsSlise';
-import { filtersReducer } from './filtersSlise';
+import { contactsReducer } from './contacts/contactsSlise';
+import { filtersReducer } from './contacts/filtersSlise';
 import { authSliseReducer } from './auth/auth-slise';
 import {
   persistStore,
