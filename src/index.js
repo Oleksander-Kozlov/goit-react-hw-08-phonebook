@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from 'components/App';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react';
 import './index.css';
-// import { Radio } from 'react-loader-spinner';
+
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
@@ -22,16 +22,13 @@ const theme = extendTheme({ colors })
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
     <Provider store={store}>
-      
-        {/* <BrowserRouter > */}
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="goit-react-hw-08-phonebook">
           <ChakraProvider theme={theme}>
             <App />
         </ChakraProvider>
         </BrowserRouter>
-        </PersistGate>
-      
+        </PersistGate>      
     </Provider>
   // </React.StrictMode>
 );
