@@ -1,5 +1,4 @@
 import { register, logIn, logOut, refreshUser } from './auth-operation.js';
-// import { authSliseReducer } from './auth/auth-slise';
 import {  persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; 
 const { createSlice } = require('@reduxjs/toolkit');
@@ -7,8 +6,7 @@ const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
-  isLoading: false,
-  error: null,
+ 
   isRefreshing: false,
 };
 const handlePending = state => {
@@ -20,13 +18,13 @@ const handleFulfilledRegister = (state, action) => {
   state.user = action.payload.user;
     state.token = action.payload.token;
     state.isLoggedIn = true;
-  state.isLoading = false;
+ 
 };
 const handleFulfilledLogIn = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;
   state.isLoggedIn = true;
-  state.isLoading = false;
+ 
 };
 const handleFulfilledlogOut = (state, action) => {
   state.user = {
@@ -34,8 +32,8 @@ const handleFulfilledlogOut = (state, action) => {
   };
   state.token = null;
   state.isLoggedIn = false;
-  state.isLoading = false;
-  state.error = null;
+ 
+  
 
 }
 
@@ -46,13 +44,13 @@ const handleFulfilledrefreshUser = (state, action) => {
   state.isRefreshing = false;
 }
 
-const handleRejected = (state, action) => {
-  state.error = action.payload;
+const handleRejected = (state) => {
+  
   state.isLoggedIn = false;
 };
 
-const handlePendingRefreshUser = (state, action) => {state.isRefreshing = true;};
-const handleRejectedRefreshUser = (state, action) => {state.isRefreshing = false;};
+const handlePendingRefreshUser = (state) => {state.isRefreshing = true;};
+const handleRejectedRefreshUser = (state) => {state.isRefreshing = false;};
 const authSlise = createSlice({
   name: 'auth',
   initialState,
@@ -63,10 +61,8 @@ const authSlise = createSlice({
       .addCase(register.rejected, handleRejected)
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, handleFulfilledLogIn)
-      .addCase(logIn.rejected, handleRejected)
-      // .addCase(logOut.pending, handlePending)
-      .addCase(logOut.fulfilled, handleFulfilledlogOut)
-      // .addCase(logOut.rejected, handleRejected),
+      .addCase(logIn.rejected, handleRejected)     
+      .addCase(logOut.fulfilled, handleFulfilledlogOut)      
       .addCase(refreshUser.pending, handlePendingRefreshUser)
       .addCase(refreshUser.fulfilled, handleFulfilledrefreshUser)
       .addCase(refreshUser.rejected, handleRejectedRefreshUser),

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { filter } from 'redux/filtersSlise.js';
+import { filter } from 'redux/contacts/filtersSlise.js';
 import { Input, Label } from '../ContactForm/ContactForm.styled.js';
 
 export const Filter = () => {

@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import * as operation from 'redux/contacts/operation';
 import { getContacts } from 'redux/contacts/selectors.js';
+// import { IconButton, CheckIcon } from '@chakra-ui/react';
 //styled
 import {
   List,
@@ -11,6 +12,9 @@ import {
 import { useEffect } from 'react';
 // import toast from 'react-hot-toast';
 
+
+  
+;
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -59,9 +63,12 @@ const visibleFilter = getVisibleContacts(items, filters)
         {visibleFilter.map(contact => (
           <CotactItem key={contact.id}>
             {contact.name}: {contact.number}{' '}
-            <ButtonDelete onClick={() => handleDelete(contact.id, contact.name)}>
+            <ButtonDelete
+              onClick={() => handleDelete(contact.id, contact.name)}
+            >
               Delete
             </ButtonDelete>
+        
           </CotactItem>
         ))}
       </List>

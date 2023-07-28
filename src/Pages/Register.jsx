@@ -1,4 +1,3 @@
-// import { Helmet } from 'react-helmet';
 import { Helmet } from 'react-helmet';
 import { RegisterUserForm } from '../components/RegisterUserForm/RegisterUserForm.jsx';
 

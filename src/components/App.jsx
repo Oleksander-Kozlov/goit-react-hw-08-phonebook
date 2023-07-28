@@ -5,14 +5,13 @@ import { Layout } from '../components/Layout.jsx';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/auth-operation';
-import { useAuth } from '../redux/auth/useAuth.js';
+import { useAuth } from '../hooks/useAuth.js';
 import NotFound from 'Pages/NotFound';
 
 const HomePage = lazy(() => import('../Pages/Home'));
 const RegisterPage = lazy(() => import('../Pages/Register'));
 const LoginPage = lazy(() => import('../Pages/LogIn'));
 const ContactsPage = lazy(() => import('../Pages/Contacts'));
-
 
 export const App = () => {
   const dispatch = useDispatch();
